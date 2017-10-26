@@ -11,7 +11,7 @@ pipeline {
             }
                     }
     stage('run') {
-    agent {docker { image 'node:7-alpine'} }
+    agent {docker { image 'jenkins/jenkins:lts'} }
       steps {
         sh 'java -jar rectangle.jar 7 9'
             }
