@@ -3,7 +3,7 @@ pipeline {
 
   stages {
     stage('build') {
-    agent {docker { image 'jenkinsci/slave:latest'} }
+    // agent {docker { image 'jenkinsci/slave:latest'} }
       steps {
         sh 'javac -d . src/*.java'
         sh 'echo Main-Class: Rectangulator > MANIFEST.MF'
@@ -11,7 +11,7 @@ pipeline {
             }
                     }
     stage('run') {
-    agent {docker { image 'jenkinsci/slave:latest'} }
+    // agent {docker { image 'jenkinsci/slave:latest'} }
       steps {
         sh 'java -jar rectangle.jar 7 9'
             }
